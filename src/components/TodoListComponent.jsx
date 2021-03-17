@@ -16,6 +16,7 @@ const TodoListComponent = ({
       <CCardBody>
         <CFormGroup variant="custom-checkbox" inline>
           <CInputCheckbox 
+            data-testid={item.id}
             onChange={() => onChange(item)}
             custom 
             id={item.id} 
