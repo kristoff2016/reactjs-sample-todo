@@ -3,7 +3,6 @@ import {
   CButton,
   CCard,
   CCardBody,
-  CCardFooter,
   CCol,
   CContainer,
   CForm,
@@ -15,7 +14,12 @@ import {
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 
-const Register = () => {
+const RegisterView = ({
+  loading,
+  state,
+  handleRegister,
+  onTextChange
+}) => {
   return (
     <div className="c-app c-default-layout flex-row align-items-center">
       <CContainer>
@@ -32,13 +36,25 @@ const Register = () => {
                         <CIcon name="cil-user" />
                       </CInputGroupText>
                     </CInputGroupPrepend>
-                    <CInput type="text" placeholder="Username" autoComplete="username" />
+                    <CInput 
+                      type="text" 
+                      name="displayName"
+                      placeholder="DisplayName" 
+                      value={state.displayName}
+                      onChange={(e) => onTextChange(e)}
+                    />
                   </CInputGroup>
                   <CInputGroup className="mb-3">
                     <CInputGroupPrepend>
                       <CInputGroupText>@</CInputGroupText>
                     </CInputGroupPrepend>
-                    <CInput type="text" placeholder="Email" autoComplete="email" />
+                    <CInput 
+                      type="email" 
+                      name="email"
+                      placeholder="Email"
+                      value={state.email}
+                      onChange={(e) => onTextChange(e)}
+                    />
                   </CInputGroup>
                   <CInputGroup className="mb-3">
                     <CInputGroupPrepend>
@@ -46,7 +62,13 @@ const Register = () => {
                         <CIcon name="cil-lock-locked" />
                       </CInputGroupText>
                     </CInputGroupPrepend>
-                    <CInput type="password" placeholder="Password" autoComplete="new-password" />
+                    <CInput 
+                      type="password" 
+                      name="password"
+                      placeholder="Password" 
+                      value={state.password}
+                      onChange={(e) => onTextChange(e)}
+                    />
                   </CInputGroup>
                   <CInputGroup className="mb-4">
                     <CInputGroupPrepend>
@@ -54,21 +76,23 @@ const Register = () => {
                         <CIcon name="cil-lock-locked" />
                       </CInputGroupText>
                     </CInputGroupPrepend>
-                    <CInput type="password" placeholder="Repeat password" autoComplete="new-password" />
+                    <CInput 
+                      type="password"
+                      name="confirmPassword" 
+                      placeholder="Repeat password" 
+                      value={state.confirmPassword}
+                      onChange={(e) => onTextChange(e)}
+                    />
                   </CInputGroup>
-                  <CButton color="success" block>Create Account</CButton>
+                  <CButton 
+                    color="success" 
+                    block 
+                    onClick={() => handleRegister()}
+                  >
+                    { loading? 'Creating...': 'Create Account' }
+                  </CButton>
                 </CForm>
               </CCardBody>
-              <CCardFooter className="p-4">
-                <CRow>
-                  <CCol xs="12" sm="6">
-                    <CButton className="btn-facebook mb-1" block><span>facebook</span></CButton>
-                  </CCol>
-                  <CCol xs="12" sm="6">
-                    <CButton className="btn-twitter mb-1" block><span>twitter</span></CButton>
-                  </CCol>
-                </CRow>
-              </CCardFooter>
             </CCard>
           </CCol>
         </CRow>
@@ -77,4 +101,4 @@ const Register = () => {
   )
 }
 
-export default Register
+export default RegisterView

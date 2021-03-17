@@ -1,9 +1,9 @@
 {
-  "name": "@coreui/coreui-free-react-admin-template",
-  "version": "3.2.0",
-  "description": "CoreUI React Open Source Bootstrap 4 Admin Template",
+  "name": "reactjs-sample-todo",
+  "version": "1.0.0",
+  "description": "Reactjs sample todo",
   "author": {
-    "name": "CoreUI",
+    "name": "Kristoff",
     "url": "https://coreui.io",
     "github": "https://github.com/coreui",
     "twitter": "https://twitter.com/core_ui"
@@ -42,7 +42,8 @@
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.2",
     "react-router-dom": "^5.2.0",
-    "redux": "4.0.5"
+    "redux": "4.0.5",
+    "sweetalert": "^2.1.2"
   },
   "devDependencies": {
     "auto-changelog": "~2.2.1",

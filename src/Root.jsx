@@ -4,6 +4,8 @@ import PropTypes from 'prop-types'
 import PageRoute from './routes'
 import StateProvider from './containers/StateProvider'
 
+import 'react-notifications/lib/notifications.css';
+
 import './scss/style.scss'
 
 const Index = ({ id }) => (

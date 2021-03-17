@@ -9,6 +9,8 @@ const loading = (
 )
 
 const LoginContainer = React.lazy(() => import('../containers/Auth/LoginContainer'));
+const RegisterContainer = React.lazy(() => import('../containers/Auth/RegisterContainer'));
+
 const TheLayout = React.lazy(() => import('../containers/TheLayout'))
 const Page404 = React.lazy(() => import('../views/pages/page404/Page404'))
 const Page500 = React.lazy(() => import('../views/pages/page500/Page500'))
@@ -19,6 +21,7 @@ const PagesRoute = () => (
       <React.Suspense fallback={loading}>
         <PrivateRoute path="/" name="Home" component={TheLayout} />
         <PublicRoute exact path="/login" component={LoginContainer} />
+        <PublicRoute exact path="/register" component={RegisterContainer} />
 
         <Route exact path="/404" name="Page 404" render={props => <Page404 {...props} />} />
         <Route exact path="/500" name="Page 500" render={props => <Page500 {...props} />} />

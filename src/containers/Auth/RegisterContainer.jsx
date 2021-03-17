@@ -2,31 +2,41 @@ import React, { useEffect, useState } from 'react'
 import { useHistory } from "react-router-dom";
 import swal from 'sweetalert';
 
-import LoginView from 'src/views/pages/login/LoginView'
+import RegisterView from 'src/views/pages/register/RegisterView'
 import { getCurrentUser, setCurrentUser } from 'src/utils/helper';
-import { serviceLogin } from 'src/service/auth';
+import { serviceRegister } from 'src/service/auth';
 
-export default function LoginContainer() {
+
+export default function RegisterContainer() {
   let history = useHistory();
+
   const [loading, setLoading] = useState(false)
-  const [state, setState] = useState({ email: "", password: "" })
+  const [state, setState] = useState({ 
+    confirmPassword: "",
+    displayName: "", 
+    email: "", 
+    password: "", 
+  })
 
   const onTextChange = event => {
     const { name, value } = event.target;
     setState(prevState => ({ ...prevState, [name]: value }));
   }
 
-  const handleLogin = async () => {
+  const handleRegister = async () => {
     try {
-      const { email, password } = state
+      const { email, password, confirmPassword } = state
       if(!email) {
         return swal("Oops!", "Please enter email", "warning")
       }
       if(!password) {
         return swal("Oops!", "Please enter password", "warning")
       }
+      if(password !== confirmPassword ) {
+        return swal("Oops!", "Password not match!", "warning")
+      }
       setLoading(true)
-      const response = await serviceLogin(state)
+      const response = await serviceRegister(state)
       response.data.accessToken = response.accessToken
       setCurrentUser(response.data)
       setLoading(false)
@@ -43,10 +53,10 @@ export default function LoginContainer() {
     }
   })
 
-  return (<LoginView 
+  return (<RegisterView 
     state={state} 
     loading={loading} 
-    handleLogin={handleLogin}
+    handleRegister={handleRegister}
     onTextChange={onTextChange}
   />)
 }
