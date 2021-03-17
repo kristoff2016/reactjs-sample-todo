@@ -4,7 +4,7 @@ import 'core-js';
 import './polyfill'
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import Root from './Root';
 import * as serviceWorker from './serviceWorker';
 
 import { icons } from './assets/icons'
@@ -16,7 +16,7 @@ React.icons = icons
 
 ReactDOM.render(
   <Provider store={store}>
-    <App/>
+    <Root/>
   </Provider>,
   document.getElementById('root')
 );
