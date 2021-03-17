@@ -1,4 +1,9 @@
-## Installation
+## Find sample test component
+
+```
+- src/components/TodoListComponent.spec.jsx
+
+```
 
 ### Clone repo
 
