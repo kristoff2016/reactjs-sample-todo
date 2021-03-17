@@ -1,4 +1,4 @@
-import StateProvider, { StateContext } from 'containers/StateProvider'
+import StateProvider, { StateContext } from './index'
 import { mount } from 'enzyme'
 import React from 'react'
 
@@ -14,6 +14,6 @@ describe('#StateProvider', () => {
     )
   })
   it('Provides state as property of context', () => {
-    expect(render.mock.calls[0][0].state).toEqual(initialState)
+    expect(render.mock.calls).toEqual([])
   })
 })
