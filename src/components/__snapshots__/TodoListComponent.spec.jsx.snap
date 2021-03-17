@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#TodoListComponent # initialState Should render TodoListComponent to toMatchSnapshot 1`] = `
+<div>
+  <div
+    class="card"
+    style="margin-bottom: 10px;"
+  >
+    <div
+      class="card-body"
+    >
+      <div
+        class="custom-control custom-checkbox custom-control-inline"
+      >
+        <input
+          checked=""
+          class="custom-control-input"
+          data-testid="1"
+          id="1"
+          name="checkbox"
+          type="checkbox"
+          value="1"
+        />
+        <label
+          class="custom-control-label"
+          for="1"
+          style="text-decoration: line-through;"
+        >
+          sample to do
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+`;
