@@ -42,3 +42,7 @@ Run `test` to build test the project.
 ```bash
 $ npm run test
 ```
+
+![alt text](https://res.cloudinary.com/dw0q3eqaz/image/upload/v1616002729/image1_vjv3hy.png)
+![alt text](https://res.cloudinary.com/dw0q3eqaz/image/upload/v1616002728/image2_wsnj9t.png)
+
